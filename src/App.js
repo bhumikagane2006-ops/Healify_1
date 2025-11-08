@@ -17,7 +17,7 @@ function App() {
       <div className="App">
         {/* ======================= NAVIGATION BAR ======================= */}
         <nav>
-          <div className="logo">🌙 Luna</div>
+          <div className="logo">😊 Hela </div>
           <div className="nav-links">
             <Link to="/">Home</Link>
             <Link to="/chat">Chat</Link>
