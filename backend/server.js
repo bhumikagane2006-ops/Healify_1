@@ -16,7 +16,11 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes); // Important: The path here MUST match the folder structure
+const PORT = process.env.PORT || 5000;
 
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 // This is the crucial part for Vercel
 // It exports the Express app instance to be used as a serverless function
 module.exports = app;

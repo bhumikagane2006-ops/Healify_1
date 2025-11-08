@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 // This is a helper function that contains Luna's "AI" logic.
 // It takes the user's message as input and returns Luna's response.
-const getLunaResponse = (userInput) => {
+const getHelaResponse = (userInput) => {
     // Convert the user's input to lowercase to make keyword matching easier
     const lowerCaseInput = userInput.toLowerCase();
 
@@ -36,7 +36,7 @@ const ChatPage = () => {
     // 'messages' state: An array to hold all the chat messages.
     // Starts with a welcoming message from Luna.
     const [messages, setMessages] = useState([
-        { sender: 'luna', text: "Hello! I'm Luna. How are you feeling today?" }
+        { sender: 'Hela', text: "Hello! I'm Hela. How are you feeling today?" }
     ]);
     
     // 'userInput' state: A string to hold what the user is currently typing in the input box.
@@ -69,12 +69,12 @@ const ChatPage = () => {
         setMessages(prevMessages => [...prevMessages, userMessage]);
 
         // 3. Get Luna's response based on the user's input
-        const lunaResponseText = getLunaResponse(userInput);
-        const lunaMessage = { sender: 'luna', text: lunaResponseText };
+        const HelaResponseText = getHelaResponse(userInput);
+        const HelaMessage = { sender: 'Hela', text: HelaResponseText };
 
         // 4. Simulate Luna "thinking" for a moment, then add her response
         setTimeout(() => {
-            setMessages(prevMessages => [...prevMessages, lunaMessage]);
+            setMessages(prevMessages => [...prevMessages, HelaMessage]);
         }, 700); // 700 milliseconds = 0.7 seconds
 
         // 5. Clear the input box for the next message
@@ -83,7 +83,7 @@ const ChatPage = () => {
 
     return (
         <section className="chat-section">
-            <h2>Start a new chat to begin talking with Luna</h2>
+            <h2>Start a new chat to begin talking with Hela</h2>
             
             <div className="chat-window" ref={chatWindowRef}>
                 {/* We map over the 'messages' array to display each message */}
